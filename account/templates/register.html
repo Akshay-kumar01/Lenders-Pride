@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LP-Regs</title>
-</head>
-<body>
-    <form method="post">
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <form class="container" method="post" style="margin-top: 100px">
         {{ form }}
         {% csrf_token %}
-        <input type="submit" value="register"></input>
+        <input class="btn btn-primary" type="submit" value="register"></input>
     </form>
-</body>
-</html>
+{% endblock %}

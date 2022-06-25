@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+LOG OUT
+
+{% endblock %}
+
+{% block content %}
+<center><h2>Logout</h2></center>
+{% if user.is_authenticated %}
+        
+{% else %}
+    <h2>Logout first to login</h2>
+{% endif %}
+
+<!-- footer -->
+{% endblock %}
