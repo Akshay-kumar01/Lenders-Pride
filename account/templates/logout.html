@@ -1,4 +1,4 @@
-{% extends '/home/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block title %}
 
@@ -9,9 +9,7 @@ LOG OUT
 {% block content %}
 <center><h2>Logout</h2></center>
 {% if user.is_authenticated %}
-        <form action="" method="post">
-
-        </form>
+        
 {% else %}
     <h2>Logout first to login</h2>
 {% endif %}
