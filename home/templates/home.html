@@ -1,11 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<link href="{% static 'css/home_page.css' %}" rel="stylesheet">
 
-<div class="container">
-    <div class="heading-op">
-        <h1 class="heading-main" style="margin-top: 100px ;">This is the home page</h1>
+<section class="landing-page">
+  <div class="container">
+    <div class="content">
+      <div class="text-cont">
+        <h1 class="header">
+          <span class="first-clr">Lending</span> money made easy and <span class="first-clr">Trustable</span>
+        </h1>
+        <p class="description">
+		    Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna
+		    aliqua.
+        </p>
+        <button class="btn btn-discover">Discover</button>
+        <button class="btn btn-play">
+          <i class="fas fa-play"></i>
+        </button>
+      </div>
+      <div class="img-cont">
+        <img class="img" src="{% static 'img/landing-img.jpg' %}">
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
 
 {% endblock %}

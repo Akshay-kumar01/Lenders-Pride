@@ -34,16 +34,16 @@
     <div class="collapse navbar-collapse" id="navbar4">
     <ul class="navbar-nav mr-auto pl-lg-4">
     
-    <li class="nav-item px-lg-2 active"> <a {%if request.resolver_match.url_name == 'home' %} class="nav-link" {% endif %} href="{% url 'home' %}"> <span class="d-inline-block d-lg-none icon-width"><i class="fas fa-home"></i></span>Home</a> </li>
+    <li class="nav-item mx-2 active"> <a {%if request.resolver_match.url_name == 'home' %} class="nav-link" {% endif %} href="{% url 'home' %}"> <span class="d-inline-block d-lg-none icon-width"><i class="fas fa-home"></i></span>Home</a> </li>
 
-    <li class="nav-item px-lg-2"> <a {%if request.resolver_match.url_name == 'about' %} class="nav-link" {% endif %} href="{% url 'about' %}"><span class="d-inline-block d-lg-none icon-width"><i class="fas fa-spa"></i></span>About</a> </li>
+    <li class="nav-item mx-2"> <a {%if request.resolver_match.url_name == 'about' %} class="active-link" {% endif %} href="{% url 'about' %}"><span class="d-inline-block d-lg-none icon-width"><i class="fas fa-spa"></i></span>About</a> </li>
 
-    <li class="nav-item px-lg-2"> 
+    <li class="nav-item mx-2"> 
         <a {%if request.resolver_match.url_name == 'login' %} class="active-link" {% endif %} target="_blank" href="{% url 'login' %}"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></span>Login</a>
     </li>
 
     {% if user.is_authenticated %}
-    <li class="nav-item px-lg-2"> 
+    <li class="nav-item mx-2"> 
         <a {%if request.resolver_match.url_name == 'logout' %} class="active-link" {% endif %} href="{% url 'register' %}"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></span>Logout</a>
     </li>
     {% endif %}
