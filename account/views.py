@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -20,3 +24,8 @@ def login(request):
     else:
         form = AuthenticationForm();
     return render(request, 'login.html', {'form': form})
+
+@login_required
+def logout(request):
+    messages.info(request,"logged out")
+    return redirect('home')

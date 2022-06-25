@@ -9,6 +9,7 @@
     <title>Lenders-Pride</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css" integrity="sha512-QfDd74mlg8afgSqm3Vq2Q65e9b3xMhJB4GZ9OcHDVy1hZ6pqBJPWWnMsKDXM7NINoKqJANNGBuVRIpIJ5dogfA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
 </head>
 <body>
@@ -34,7 +35,16 @@
     <ul class="navbar-nav mr-auto pl-lg-4">
     <li class="nav-item px-lg-2 active"> <a class="nav-link" href="#"> <span class="d-inline-block d-lg-none icon-width"><i class="fas fa-home"></i></span>Home</a> </li>
     <li class="nav-item px-lg-2"> <a class="nav-link" href="#"><span class="d-inline-block d-lg-none icon-width"><i class="fas fa-spa"></i></span>Services</a> </li>
-    <li class="nav-item px-lg-2"> <a class="nav-link" target="_blank" href="#"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></i></span>Account</a> </li>
+
+    <li class="nav-item px-lg-2"> 
+        <a {%if request.resolver_match.url_name == 'register' %} class="active-link" {% endif %} target="_blank" href="{% url 'register' %}"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></span>Register</a>
+    </li>
+
+    {% if user.is_authenticated %}
+    <li class="nav-item px-lg-2"> 
+        <a {%if request.resolver_match.url_name == 'logout' %} class="active-link" {% endif %} target="_blank" href="{% url 'home' %}"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></span>Logout</a>
+    </li>
+    {% endif %}
     </ul>
 
     </div>
