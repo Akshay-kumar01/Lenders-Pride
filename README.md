@@ -1,22 +1,35 @@
 # Lenders-Pride
-A project to facilitate decentralised money lending system.
 
+![img](https://github.com/Akshay-kumar01/Lenders-Pride/blob/main/home/static/img/Page_2.png)
+<br>
+<hr>
 
-**Web3 application:**
-- to build a money lending applcation which would help people with fully protected money lending solutions.
-  - two way P2P lending process
-  - like OLX (where people would bid for the lowest acceptable interest rates)
-  - taking money in their respective currency and storing and moving it as ethereum....
-  - lender auth different / creditor auth different 
-  - chat integration
- 
-**Future vision:**
-  - automatic suggestions through the app for investing money in stocks...
-  - incorporate the investment part where people can invest.
+**A project to facilitate decentralised money lending system.**
+<br>
 
-**Works Works**
-- auth0 user authentications........
-- twilio chat integrations......
-- goDaddy/&/Domain.com  for domain.......
-- some db implementation
-- hosting on netlify
+Technology exterminates the various hindrances faced by humans in their daily lives. The advancement of technology and some flaws in the lending market and business market herald for a revolutionary amendment in the same. Hence, team Valdos presents a money lending platform, fully authenticated, providing facilities much more than lending.
+
+<br>
+<hr>
+<br>
+
+- The problems solved are as follows:
+  - Decentralized money lending process which provides hassle free business.
+  - Use of authentication (AUTH0) to encrypt the data of the client and the user, thereby removing any information leaks.
+  - The platform will provide the lenders with options or areas in which they could spend their money to earn profits. This would prevent the users from exhibiting losses.
+  - Two way P2P business deals.
+  - Authentication of borrower and lender differently.
+
+<br>
+<hr>
+<br>
+
+- Future Vision - 
+
+  - Serving as a medium between investors and companies.
+  - Implementing ethereum as currency for the platform.
+  - Chat integration for solving the doubts and issues.
+  - Twilio chat integration
+  - goDaddy/&/Domain.com for domains
+  - Database implementation
+  - Netlify hosting
