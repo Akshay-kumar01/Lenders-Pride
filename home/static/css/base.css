@@ -7,6 +7,11 @@
 /* Font Awesome Icons have variable width. Added fixed width to fix that.*/
 .icon-width { width: 2rem;}
 
+.nav-items{
+  text-decoration: none !important;
+  size: 12px;
+  color: rgb(126, 126, 126);
+}
 
 
 /* landing page */

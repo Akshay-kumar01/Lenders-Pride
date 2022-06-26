@@ -9,13 +9,14 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
 from pathlib import Path
 from telnetlib import AUTHENTICATION
 from decouple import config
+import os
+from dotenv import load_dotenv, find_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+TEMPLATE_DIR = os.path.join(BASE_DIR, "mysite", "templates")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -38,15 +39,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django'
+    'social_django',
     'home',
     'account',
 ]
 
-SOCIAL_AUTH_TRAILING_SLASH=False
-SOCIAL_AUTH_AUTH0_DOMAIN=config('APP_DOMAIN')
-SOCIAL_AUTH_AUTH0_KEY=config('APP_CLIENT_ID')
-SOCIAL_AUTH_AUTH0_SECRET=config('APP_CLIENT_SECRET')
+# Load environment definition file
+ENV_FILE = find_dotenv()
+if ENV_FILE:
+    load_dotenv(ENV_FILE)
+
+
+# Load Auth0 application settings into memory
+AUTH0_DOMAIN = os.environ.get("AUTH0_DOMAIN")
+AUTH0_CLIENT_ID = os.environ.get("AUTH0_CLIENT_ID")
+AUTH0_CLIENT_SECRET = os.environ.get("AUTH0_CLIENT_SECRET")
 
 
 SOCIAL_AUTH_AUTH0_SCOPE=[
@@ -57,10 +64,9 @@ SOCIAL_AUTH_AUTH0_SCOPE=[
 
 
 AUTHENTICATION_BACKENDS={
-    'social_core.backend.auth0.Auth0OAuth2'
+    'social_core.backends.auth0.Auth0OAuth2',
     'django.contrib.auth.backends.ModelBackend'
 }
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -76,7 +82,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+         "DIRS": [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
