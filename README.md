@@ -19,3 +19,17 @@ Technology exterminates the various hindrances faced by humans in their daily li
   - The platform will provide the lenders with options or areas in which they could spend their money to earn profits. This would prevent the users from exhibiting losses.
   - Two way P2P business deals.
   - Authentication of borrower and lender differently.
+
+<br>
+<hr>
+<br>
+
+- Future Vision - 
+
+  - Serving as a medium between investors and companies.
+  - Implementing ethereum as currency for the platform.
+  - Chat integration for solving the doubts and issues.
+  - Twilio chat integration
+  - goDaddy/&/Domain.com for domains
+  - Database implementation
+  - Netlify hosting
