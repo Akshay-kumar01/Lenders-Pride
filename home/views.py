@@ -4,19 +4,11 @@ from django.conf import settings
 from django.shortcuts import redirect, render, redirect
 from django.urls import reverse
 from urllib.parse import quote_plus, urlencode
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from django.contrib.auth import logout as django_logout
+from decouple import config
 
-oauth = OAuth()
-
-oauth.register(
-    "auth0",
-    client_id=settings.AUTH0_CLIENT_ID,
-    client_secret=settings.AUTH0_CLIENT_SECRET,
-    client_kwargs={
-        "scope": "openid profile email",
-    },
-    server_metadata_url=f"https://{settings.AUTH0_DOMAIN}/.well-known/openid-configuration",
-)
 
 # Create your views here.
 def home(request):
@@ -38,10 +30,9 @@ def logout(request):
 
     domain=config('APP_DOMAIN')
     client_id=config('APP_CLIENT_ID')
-    return_to='http://localhost:8000/'
+    return_to='http://127.0.0.1:8000/'
 
     return HttpResponseRedirect(f"https://{domain}/v2/logout?client_id={client_id}&returnTo={return_to}")
-
 
 
 def profile(request):
@@ -62,3 +53,6 @@ def profile(request):
 
 
     return render(request,'profile.html',context)
+
+
+

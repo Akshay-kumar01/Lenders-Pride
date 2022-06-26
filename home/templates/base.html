@@ -40,14 +40,14 @@
 
     {% if user.is_authenticated %}
     <li class="nav-item mx-2"> 
-        <a {%if request.resolver_match.url_name == 'logout' %} class="active-link" {% endif %} href="{% url 'logout' %}"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></span>Logout</a>
+        <a {%if request.resolver_match.url_name == 'logout' %} class="active-link" {% endif %} href="/logout"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></span>Logout</a>
     </li>
     <li class="nav-item mx-2"> 
-        <a {%if request.resolver_match.url_name == 'profile' %} class="active-link" {% endif %} href="{% url 'profile' %}"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></span>Profile</a>
+        <a {%if request.resolver_match.url_name == 'profile' %} class="active-link" {% endif %} href="/profile"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></span>Profile</a>
     </li>
     {% else %}
     <li class="nav-item mx-2"> 
-        <a {%if request.resolver_match.url_name == 'login' %} class="active-link" {% endif %} target="_blank" href="/login/auth0"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></span>Login</a>
+        <a class="active-link" href="login/auth0"><span class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></span>Login</a>
     </li>
     {% endif %}
     </ul>
