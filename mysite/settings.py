@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
+from dotenv import load_dotenv, find_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,11 +43,15 @@ INSTALLED_APPS = [
     'social_django',
 ]
 
+ENV_FILE = find_dotenv()
+if ENV_FILE:
+    load_dotenv(ENV_FILE)
 
-AUTH_TRAILING_SLASH=False
-AUTH_AUTH0_DOMAIN=config('APP_DOMAIN')
-AUTH_AUTH0_KEY=config('APP_CLIENT_ID')
-AUTH_AUTH0_SECRET=config('APP_CLIENT_SECRET')
+
+AUTH_TRAILING_SLASH = False  
+AUTH0_DOMAIN = 'dev-p8q-lmoh.us.auth0.com'
+AUTH0_CLIENT_ID = 'nYLuMR3AWNKVvZ6Xs4LqYDyMbbmJ2UWk'
+AUTH0_CLIENT_SECRET = 'pr6C7Kl68T9ACMx6qkzKfkLlea6_Z_vFCyAIuOuunsXImI9M-9RpPXikfccPZ0oW'
 
 
 SOCIAL_AUTH_AUTH0_SCOPE=[

@@ -7,4 +7,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('account/', include('account.urls')),
+    path('', include('social_django.urls')),
 ]
